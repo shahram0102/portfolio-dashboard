@@ -6,7 +6,7 @@ import { FaMicrophone } from "react-icons/fa";
 import { AiOutlineHome } from "react-icons/ai";
 import { AiOutlineMessage } from "react-icons/ai";
 import { BsTelephone } from "react-icons/bs";
-import { MdOutlineComputer } from "react-icons/md";
+import { BiTransferAlt } from "react-icons/bi";
 import { BsFillPeopleFill } from "react-icons/bs";
 import { BsUpload } from "react-icons/bs";
 import { AiOutlineCalendar } from "react-icons/ai";
@@ -81,10 +81,10 @@ const SideBar = () => {
           </li>
           <li>
             <Link
-              to="/shared"
+              to="/transfers"
               className={`p-2 gap-1 flex-col  text-gray-600 flex justify-start items-center font-bold`}
             >
-              <MdOutlineComputer
+              <BiTransferAlt
                 className={`${
                   open ? "text-lg text-purple-800" : "text-2xl text-gray-700"
                 }`}
