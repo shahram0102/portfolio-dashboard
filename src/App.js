@@ -1,11 +1,19 @@
 import React from "react";
 import SideBar from "./components/SideBar";
 
+import { Routes, Route } from "react-router-dom";
+import routes from "./routes";
+import LayOut from "./layOut/LayOut";
+
 const App = () => {
   return (
-    <div>
-      <SideBar />
-    </div>
+    <LayOut>
+      <Routes>
+        {routes.map((route) => {
+          return <Route {...route} />;
+        })}
+      </Routes>
+    </LayOut>
   );
 };
 

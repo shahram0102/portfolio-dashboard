@@ -13,15 +13,21 @@ import { AiOutlineCalendar } from "react-icons/ai";
 import { FiSettings } from "react-icons/fi";
 import { BsArrowRightCircleFill } from "react-icons/bs";
 
-
-
 const SideBar = () => {
   const [open, setOpen] = useState(false);
   return (
-    <div className={` ${open ? "w-36 gap-4 shadow-md bg-purple-300 shadow-white " :"w-16 gap-20 bg-white"} duration-200 h-screen p-4 pt-8 flex flex-col items-center  justify-start relative`}>
+    <div
+      className={` ${
+        open
+          ? "w-36 gap-4 shadow-md bg-purple-300 shadow-white "
+          : "w-16 gap-20 bg-white"
+      } duration-200 h-screen p-4 pt-8 flex flex-col items-center  justify-start relative`}
+    >
       <div
         onClick={() => setOpen(!open)}
-        className={`${open ? "rotate-180" : "rotate-0"} duration-500 absolute top-2 cursor-pointer -right-3 text-purple-700 text-2xl`}
+        className={`${
+          open ? "rotate-180" : "rotate-0"
+        } duration-500 absolute top-2 cursor-pointer -right-3 text-purple-700 text-2xl`}
       >
         <BsArrowRightCircleFill />
       </div>
@@ -29,80 +35,114 @@ const SideBar = () => {
         <FaMicrophone className="text-white text-xl" />
       </div>
       <nav className="">
-        <ul className={`${open ? "gap-2":"gap-6"} flex items-center flex-col `}>
+        <ul
+          className={`${open ? "gap-2" : "gap-6"} flex items-center flex-col `}
+        >
           <li>
             <Link
               to="/"
               className={`p-2 gap-1 flex-col  text-gray-600 flex justify-start items-center font-bold`}
             >
-              <AiOutlineHome className={`${open? "text-lg text-purple-800" : "text-2xl text-gray-700"}`} />
-              {open && <span className="text-purple-800" >home</span>}
+              <AiOutlineHome
+                className={`${
+                  open ? "text-lg text-purple-800" : "text-2xl text-gray-700"
+                }`}
+              />
+              {open && <span className="text-purple-800">home</span>}
             </Link>
           </li>
           <li>
             <Link
-              to="/"
+              to="/sending-message"
               className={`p-2 gap-1 flex-col  text-gray-600 flex justify-start items-center font-bold relative`}
             >
-              <AiOutlineMessage className={`${open? "text-lg text-purple-800" : "text-2xl text-gray-700"}`} />
-              {open && <span className="text-purple-800" >message</span>}
+              <AiOutlineMessage
+                className={`${
+                  open ? "text-lg text-purple-800" : "text-2xl text-gray-700"
+                }`}
+              />
+              {open && <span className="text-purple-800">message</span>}
               <span className="w-1 rounded-full absolute h-1 bg-green-600 flex p-1 top-0 right-0"></span>
             </Link>
           </li>
           <li>
             <Link
-              to="/"
+              to="/contact-us"
               className={`p-2 gap-1 flex-col  text-gray-600 flex justify-start items-center font-bold relative`}
             >
-              <BsTelephone className={`${open? "text-lg text-purple-800" : "text-2xl text-gray-700"}`} />
-              {open && <span className="text-purple-800" >contacts</span>}
+              <BsTelephone
+                className={`${
+                  open ? "text-lg text-purple-800" : "text-2xl text-gray-700"
+                }`}
+              />
+              {open && <span className="text-purple-800">contacts</span>}
               <span className="w-1 rounded-full absolute h-1 bg-green-600 flex p-1 top-0 right-0"></span>
             </Link>
           </li>
           <li>
             <Link
-              to="/"
+              to="/shared"
               className={`p-2 gap-1 flex-col  text-gray-600 flex justify-start items-center font-bold`}
             >
-              <MdOutlineComputer className={`${open? "text-lg text-purple-800" : "text-2xl text-gray-700"}`} />
-              {open && <span className="text-purple-800" >shared</span>}
+              <MdOutlineComputer
+                className={`${
+                  open ? "text-lg text-purple-800" : "text-2xl text-gray-700"
+                }`}
+              />
+              {open && <span className="text-purple-800">shared</span>}
             </Link>
           </li>
           <li>
             <Link
-              to="/"
+              to="/friends"
               className={`p-2 gap-1 flex-col  text-gray-600 flex justify-start items-center font-bold`}
             >
-              <BsFillPeopleFill className={`${open? "text-lg text-purple-800" : "text-2xl text-gray-700"}`} />
-              {open && <span className="text-purple-800" >your friend</span>}
+              <BsFillPeopleFill
+                className={`${
+                  open ? "text-lg text-purple-800" : "text-2xl text-gray-700"
+                }`}
+              />
+              {open && <span className="text-purple-800">your friend</span>}
             </Link>
           </li>
           <li>
             <Link
-              to="/"
+              to="/upload"
               className={`p-2 gap-1 flex-col  text-gray-600 flex justify-start items-center font-bold`}
             >
-              <BsUpload className={`${open? "text-lg text-purple-800" : "text-2xl text-gray-700"}`} />
-              {open && <span className="text-purple-800" >upload</span>}
+              <BsUpload
+                className={`${
+                  open ? "text-lg text-purple-800" : "text-2xl text-gray-700"
+                }`}
+              />
+              {open && <span className="text-purple-800">upload</span>}
             </Link>
           </li>
           <li>
             <Link
-              to="/"
+              to="/calender"
               className={`p-2 gap-1 flex-col  text-gray-600 flex justify-start items-center font-bold relative`}
             >
-              <AiOutlineCalendar className={`${open? "text-lg text-purple-800" : "text-2xl text-gray-700"}`} />
-              {open && <span className="text-purple-800" >calender</span>}
+              <AiOutlineCalendar
+                className={`${
+                  open ? "text-lg text-purple-800" : "text-2xl text-gray-700"
+                }`}
+              />
+              {open && <span className="text-purple-800">calender</span>}
               <span className="w-1 rounded-full absolute h-1 bg-green-600 flex p-1 top-0 right-0"></span>
             </Link>
           </li>
           <li>
             <Link
-              to="/"
+              to="/setting"
               className={`p-2 gap-1 flex-col  text-gray-600 flex justify-start items-center font-bold`}
             >
-              <FiSettings className={`${open? "text-lg text-purple-800" : "text-2xl text-gray-700"}`} />
-              {open && <span className="text-purple-800" >setting</span>}
+              <FiSettings
+                className={`${
+                  open ? "text-lg text-purple-800" : "text-2xl text-gray-700"
+                }`}
+              />
+              {open && <span className="text-purple-800">setting</span>}
             </Link>
           </li>
         </ul>
