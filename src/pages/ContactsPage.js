@@ -11,7 +11,7 @@ import { dataUsers } from "../db/datausers";
 
 const ContactsPage = () => {
   return (
-    <section className="bg-gray-200 w-full px-2">
+    <section className="bg-gray-200 w-full ">
       <div className="">
         <header className="flex py-1 mb-5 bg-gray-100 px-3 items-center justify-between w-full border-b border-gray-400 pb-4">
           <div className="w-1/3">

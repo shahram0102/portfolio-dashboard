@@ -1,3 +1,4 @@
+import MyBlog from "./components/MyBlog";
 import CalenderPage from "./pages/CalenderPage";
 import ContactsPage from "./pages/ContactsPage";
 import HomePage from "./pages/HomePage";
@@ -11,6 +12,7 @@ const routes = [
   { path: "/", element: <HomePage /> },
   { path: "/calender", element: <CalenderPage /> },
   { path: "/contact-us/*", element: <ContactsPage /> },
+  { path: "/my-blog/:id", element: <MyBlog /> },
   { path: "/sending-message", element: <MessagePage /> },
   { path: "/setting", element: <SettingPage /> },
   { path: "/shared", element: <SharedPage /> },

@@ -19,9 +19,9 @@ const SideBar = () => {
     <div
       className={` ${
         open
-          ? "w-36 gap-4 shadow-md bg-purple-300  min-h-fit  shadow-white"
-          : "w-16 gap-20 bg-white"
-      } duration-200  p-4 pt-8 flex flex-col items-center relative justify-start`}
+          ? "w-44 gap-4 shadow-md bg-purple-300 absolute   h-[200vh] shadow-white"
+          : "w-16 gap-20 bg-white relative"
+      } duration-200  p-4 pt-8 flex flex-col items-center justify-start z-10`}
     >
       <div
         onClick={() => setOpen(!open)}
