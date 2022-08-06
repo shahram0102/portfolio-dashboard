@@ -3,7 +3,7 @@ import SideBar from "../components/SideBar";
 
 const LayOut = ({ children }) => {
   return (
-    <div className="flex flex-row gap-6">
+    <div className="flex flex-row">
       <SideBar />
       {children}
     </div>

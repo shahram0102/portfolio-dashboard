@@ -10,7 +10,7 @@ import YourFriendPage from "./pages/YourFriendPage";
 const routes = [
   { path: "/", element: <HomePage /> },
   { path: "/calender", element: <CalenderPage /> },
-  { path: "/contact-us", element: <ContactsPage /> },
+  { path: "/contact-us/*", element: <ContactsPage /> },
   { path: "/sending-message", element: <MessagePage /> },
   { path: "/setting", element: <SettingPage /> },
   { path: "/shared", element: <SharedPage /> },

@@ -19,24 +19,24 @@ const SideBar = () => {
     <div
       className={` ${
         open
-          ? "w-36 gap-4 shadow-md bg-purple-300 shadow-white "
+          ? "w-36 gap-4 shadow-md bg-purple-300  min-h-fit  shadow-white"
           : "w-16 gap-20 bg-white"
-      } duration-200 h-screen p-4 pt-8 flex flex-col items-center  justify-start relative`}
+      } duration-200  p-4 pt-8 flex flex-col items-center relative justify-start`}
     >
       <div
         onClick={() => setOpen(!open)}
         className={`${
           open ? "rotate-180" : "rotate-0"
-        } duration-500 absolute top-2 cursor-pointer -right-3 text-purple-700 text-2xl`}
+        } duration-500 absolute top-2 cursor-pointer  -right-3 text-purple-700 text-2xl`}
       >
         <BsArrowRightCircleFill />
       </div>
       <div className="w-8 flex justify-center items-center h-8 rounded-lg bg-purple-800">
         <FaMicrophone className="text-white text-xl" />
       </div>
-      <nav className="">
+      <nav className="sticky top-0">
         <ul
-          className={`${open ? "gap-2" : "gap-6"} flex items-center flex-col `}
+          className={`${open ? "gap-2" : "gap-6"} flex items-center  flex-col `}
         >
           <li>
             <Link
