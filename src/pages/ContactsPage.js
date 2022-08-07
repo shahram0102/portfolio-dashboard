@@ -28,7 +28,7 @@ const ContactsPage = () => {
   }, []);
 
   return (
-    <section className="bg-gray-200 col-span-10 sm:col-span-11 col-start-3 sm:col-start-2 w-full">
+    <section className="bg-gray-200 min-h-screen col-span-10 sm:col-span-11 col-start-3 sm:col-start-2 w-full">
       <div className="">
         <header className="flex py-1 mb-5 bg-gray-100 px-3 items-center justify-between w-full border-b border-gray-400 pb-4">
           <div className="w-1/3 md:w-1/2">

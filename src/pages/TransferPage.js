@@ -38,7 +38,7 @@ const TransferPage = () => {
   console.log(transferFilter);
 
   return (
-    <section className="bg-gray-100 w-full py-2 px-4 col-span-10 sm:col-span-11 col-start-3 sm:col-start-2">
+    <section className="bg-gray-100 w-full py-2 px-4 col-span-10 min-h-screen sm:col-span-11 col-start-3 sm:col-start-2">
       <div className="flex justify-between">
         <h2> List Transfers</h2>
         <select className="py-2 px-4 mr-6 bg-inherit border-purple-700 border rounded-md text-purple-800 text-xl font-bold " value={valueOption} onChange={changeHandler}>

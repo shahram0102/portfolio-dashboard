@@ -4,6 +4,7 @@ import { FiChevronRight } from "react-icons/fi";
 import { dataHomePage, listTransfers, mySelfData } from "../db/datausers";
 
 import { Link } from "react-router-dom";
+import ChartAbilities from "../components/ChartAbilities";
 
 const HomePage = () => {
   const dataTransfers = listTransfers.slice(1, 5);
@@ -62,8 +63,8 @@ const HomePage = () => {
           </div>
         </div>
       </div>
-      <div className="flex px-4 py-2 gap-2">
-        <div className="px-4 py-2 w-full rounded-md bg-orange-300">
+      <div className="flex px-4 flex-col md:flex-row py-2 gap-2">
+        <div className="px-4 py-2 w-full md:w-3/4 rounded-md bg-white">
           <h3 className="text-xl text-purple-700 font-semibold mb-2">
             My Transfers
           </h3>
@@ -94,12 +95,16 @@ const HomePage = () => {
                 </div>
               );
             })}
-            <Link to="/transfers" className="ml-auto mt-2 flex gap-1 text-purple-800 items-center text-xl">
+            <Link
+              to="/transfers"
+              className="ml-auto mt-2 flex gap-1 text-purple-800 items-center text-xl"
+            >
               <span className="font-medium">View all</span>
               <FiChevronRight className="text-3xl" />
             </Link>
           </div>
         </div>
+        <ChartAbilities />
       </div>
     </section>
   );
