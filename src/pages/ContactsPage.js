@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 import { Link, Routes, Route, useParams } from "react-router-dom";
 
@@ -10,27 +10,45 @@ import { BsUpload } from "react-icons/bs";
 import { dataUsers } from "../db/datausers";
 
 const ContactsPage = () => {
+  const [filterUsers, setFilterUsers] = useState([]);
+
+  const searchUsers = (e) => {
+    const value = e.target.value.trim();
+    const filterdUsers = dataUsers.filter((u) =>
+      (u.name && u.email).toLowerCase().includes(value.toLowerCase())
+    );
+
+    setFilterUsers(filterdUsers);
+
+    console.log(filterUsers);
+  };
+
+  useEffect(() => {
+    setFilterUsers(dataUsers);
+  }, []);
+
   return (
-    <section className="bg-gray-200 w-full ">
+    <section className="bg-gray-200 col-span-10 sm:col-span-11 col-start-3 sm:col-start-2 w-full">
       <div className="">
         <header className="flex py-1 mb-5 bg-gray-100 px-3 items-center justify-between w-full border-b border-gray-400 pb-4">
-          <div className="w-1/3">
+          <div className="w-1/3 md:w-1/2">
             <h3 className="font-bold text-lg">Contacts</h3>
           </div>
-          <div className="flex flex-col gap-1 w-2/3 max-w-screen-sm">
+          <div className="flex flex-col gap-1 w-2/3 md:w-1/2 max-w-screen-sm">
             <span className="text-gray-500">search for contact</span>
             <label className="flex gap-2 w-full">
               <AiOutlineSearch className="text-2xl" />
               <input
-                className="bg-transparent flex-1 outline-none placeholder:text-zinc-800"
-                placeholder="Name,email or phone number"
+                onChange={searchUsers}
+                className="bg-transparent flex-1 outline-none placeholder:text-zinc-800 placeholder:text-xs"
+                placeholder="search by Name or email"
               />
             </label>
           </div>
         </header>
-        <div className="flex flex-col gap-10 md:flex-row md:gap-20 ">
+        <div className="flex flex-col gap-10 md:flex-row px-3 md:gap-20 ">
           <div className="md:w-1/2 w-full  px-2 py-1 flex flex-col gap-5">
-            {dataUsers.map((user) => {
+            {filterUsers.map((user) => {
               return (
                 <div key={user.id} className="flex">
                   <div className="flex w-2/3 gap-1">
@@ -85,11 +103,10 @@ const UserDetailContact = () => {
   const { name } = useParams();
   console.log(name);
   const user = dataUsers.find((user) => user.name === name);
-  console.log(user);
   return (
     <div className=" py-2 bg-white rounded-md lg:w-1/2 shadow-md flex flex-1 flex-col px-4">
       <div className="flex gap-3 justify-center">
-        <div className="w-1/4 h-24 md:w-2/4 lg:h-44 rounded-xl overflow-hidden">
+        <div className="w-24 h-24 md:w-2/4 lg:h-44 rounded-xl overflow-hidden">
           <img className="w-full h-full" src={user.image} />
         </div>
         <div className="w-3/4 flex flex-col">

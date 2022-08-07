@@ -3,10 +3,10 @@ import SideBar from "../components/SideBar";
 
 const LayOut = ({ children }) => {
   return (
-    <div className="flex flex-row max-w-[1360px] m-auto">
+    <main className="relative grid grid-cols-12 min-h-fit max-w-[1360px] m-auto">
       <SideBar />
       {children}
-    </div>
+    </main>
   );
 };
 

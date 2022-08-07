@@ -8,7 +8,7 @@ import { Link } from "react-router-dom";
 const HomePage = () => {
   const dataTransfers = listTransfers.slice(1, 5);
   return (
-    <section className=" bg-gray-100 w-full flex flex-col">
+    <section className=" bg-gray-100 col-span-10 sm:col-span-11 col-start-3 sm:col-start-2 w-full flex flex-col">
       <div className="w-full px-4 flex flex-col gap-1 pb-2 border-b-2">
         <h2 className="text-3xl text-zinc-800 font-medium">Hi Shahram</h2>
         <h3 className="text-gray-500 text-xl">
@@ -20,7 +20,7 @@ const HomePage = () => {
       </div>
 
       <div className="flex p-2 flex-col gap-4 md:flex-row">
-        <div className="w-full grid grid-cols-1 md:w-1/2 sm:grid-cols-2 gap-4">
+        <div className="grid grid-cols-1 md:w-1/2 sm:grid-cols-2 gap-4">
           {dataHomePage.map((item) => {
             return (
               <div
@@ -28,14 +28,14 @@ const HomePage = () => {
                 className="rounded-lg  bg-white py-2 px-3 flex items-center justify-between"
               >
                 <div className="flex flex-col gap-1">
-                  <h6 className="text-xl font-medium text-gray-500">
+                  <h6 className="text-lg font-medium text-gray-500">
                     {item.title}
                   </h6>
-                  <span className="text-4xl font-semibold text-zinc-800">
+                  <span className="text-2xl font-semibold text-zinc-800">
                     {item.value}
                   </span>
                 </div>
-                <div className="w-20 h-20 bg-purple-700 flex justify-center items-center rounded-full shadow-lg shadow-white">
+                <div className="w-14 h-14 bg-purple-700 flex justify-center items-center rounded-full shadow-lg shadow-white">
                   {item.icon}
                 </div>
               </div>
@@ -89,7 +89,7 @@ const HomePage = () => {
                     </div>
                   </div>
                   <span className="ml-auto py-1 h-min px-3 bg-purple-400 flex justify-center items-center rounded-full text-purple-800 text-lg font-semibold">
-                    {item.value}
+                    {item.value} $
                   </span>
                 </div>
               );

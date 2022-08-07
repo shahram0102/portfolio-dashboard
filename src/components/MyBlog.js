@@ -14,7 +14,7 @@ const MyBlog = () => {
   );
   console.log(findItem);
   return (
-    <section className="w-full bg-gray-100 py-4 pt-8 px-8 relative  flex justify-center">
+    <section className="col-span-10 sm:col-span-11 col-start-3 sm:col-start-2 bg-gray-100  py-4 pt-8 px-8 relative  flex justify-center">
       <div onClick={()=>navigate(-1)} className="w-10 h-10 bg-white rounded-full  absolute left-1 cursor-pointer flex justify-center items-center">
         <FiChevronLeft className="text-3xl text-purple-800" />
       </div>

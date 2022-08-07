@@ -5,7 +5,6 @@ import HomePage from "./pages/HomePage";
 import MessagePage from "./pages/MessagePage";
 import SettingPage from "./pages/SettingPage";
 import SharedPage from "./pages/TransferPage";
-import UploadPage from "./pages/UploadPage";
 import YourFriendPage from "./pages/YourFriendPage";
 
 const routes = [
@@ -16,7 +15,6 @@ const routes = [
   { path: "/sending-message", element: <MessagePage /> },
   { path: "/setting", element: <SettingPage /> },
   { path: "/transfers", element: <SharedPage /> },
-  { path: "/upload", element: <UploadPage /> },
   { path: "/friends", element: <YourFriendPage /> },
 ];
 

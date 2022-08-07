@@ -8,7 +8,6 @@ import { AiOutlineMessage } from "react-icons/ai";
 import { BsTelephone } from "react-icons/bs";
 import { BiTransferAlt } from "react-icons/bi";
 import { BsFillPeopleFill } from "react-icons/bs";
-import { BsUpload } from "react-icons/bs";
 import { AiOutlineCalendar } from "react-icons/ai";
 import { FiSettings } from "react-icons/fi";
 import { BsArrowRightCircleFill } from "react-icons/bs";
@@ -19,9 +18,9 @@ const SideBar = () => {
     <div
       className={` ${
         open
-          ? "w-44 gap-4 shadow-md bg-purple-300 absolute   h-[200vh] shadow-white"
-          : "w-16 gap-20 bg-white relative"
-      } duration-200  p-4 pt-8 flex flex-col items-center justify-start z-10`}
+          ? "w-44 gap-4 shadow-md flex-1 bg-purple-300 absolute inset-0 shadow-white"
+          : "gap-5 bg-white relative"
+      } duration-200  p-4 pt-8 flex flex-col col-span-2 sm:col-span-1  items-center justify-start z-10`}
     >
       <div
         onClick={() => setOpen(!open)}
@@ -35,9 +34,7 @@ const SideBar = () => {
         <FaMicrophone className="text-white text-xl" />
       </div>
       <nav className="sticky top-0">
-        <ul
-          className={`${open ? "gap-2" : "gap-6"} flex items-center  flex-col `}
-        >
+        <ul className={`${open ? "" : "gap-8"} flex items-center  flex-col `}>
           <li>
             <Link
               to="/"
@@ -105,19 +102,7 @@ const SideBar = () => {
               {open && <span className="text-purple-800">your friend</span>}
             </Link>
           </li>
-          <li>
-            <Link
-              to="/upload"
-              className={`p-2 gap-1 flex-col  text-gray-600 flex justify-start items-center font-bold`}
-            >
-              <BsUpload
-                className={`${
-                  open ? "text-lg text-purple-800" : "text-2xl text-gray-700"
-                }`}
-              />
-              {open && <span className="text-purple-800">upload</span>}
-            </Link>
-          </li>
+
           <li>
             <Link
               to="/calender"

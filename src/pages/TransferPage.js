@@ -35,17 +35,19 @@ const TransferPage = () => {
     setTransferFilter(listTransfers);
   }, []);
 
+  console.log(transferFilter);
+
   return (
-    <section className="bg-gray-100 w-full py-2 px-4">
-      <div>
+    <section className="bg-gray-100 w-full py-2 px-4 col-span-10 sm:col-span-11 col-start-3 sm:col-start-2">
+      <div className="flex justify-between">
         <h2> List Transfers</h2>
-        <select value={valueOption} onChange={changeHandler}>
+        <select className="py-2 px-4 mr-6 bg-inherit border-purple-700 border rounded-md text-purple-800 text-xl font-bold " value={valueOption} onChange={changeHandler}>
           <option value={"All"}>All</option>
           <option value={"Income"}>Income</option>
           <option value={"Expense"}>Expense</option>
         </select>
       </div>
-      <div className="grid grid-cols-1  sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4  py-2 px-5 gap-4">
+      <div className="grid grid-cols-1  sm:grid-cols-2  lg:grid-cols-3  py-2 px-5 gap-4">
         {transferFilter.map((item) => {
           return (
             <div
@@ -54,21 +56,21 @@ const TransferPage = () => {
                 item.type === "Income" ? "bg-green-400" : "bg-red-500"
               } px-2 flex items-center  py-4 rounded-lg`}
             >
-              <div className="w-24 h-24 rounded-full overflow-hidden">
-                <img className="w-full h-full" src={item.image} />
+              <div className=" h-24 rounded-full w-1/3 overflow-hidden">
+                <img className="w-24 rounded-full object-cover h-24 md:w-full md:h-full" src={item.image} />
               </div>
-              <div className="flex flex-col ml-auto">
-                <span className="text-xl font-semibold text-purple-800">
+              <div className="flex flex-col gap-2  justify-center items-end w-2/3 ml-auto">
+                <span className="text-xl text-center font-semibold text-white">
                   {item.type === "Income"
-                    ? `From ${item.person}`
-                    : `To ${item.person}`}
+                    ? `transfer From ${item.person}`
+                    : `transfer To ${item.person}`}
                 </span>
-                <div className="flex gap-1 text-lg text-gray-600">
+                <div className="flex gap-1  text-lg text-white">
                   <span>{item.date},</span>
                   <span>{item.time}</span>
                 </div>
-                <span className="py-1 h-min px-3 bg-purple-400 flex justify-center items-center rounded-full text-purple-800 text-lg font-semibold">
-                  {item.value}
+                <span className={`${item.type==="Income"?"bg-green-900 text-green-400":"bg-red-900 text-red-500"} py-1 h-min px-3 flex justify-center items-center rounded-full  text-lg font-semibold`}>
+                  {item.value} $
                 </span>
               </div>
             </div>
