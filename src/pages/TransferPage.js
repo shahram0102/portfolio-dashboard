@@ -57,7 +57,7 @@ const TransferPage = () => {
               } px-2 flex items-center  py-4 rounded-lg`}
             >
               <div className=" h-24 rounded-full w-1/3 overflow-hidden">
-                <img className="w-24 rounded-full object-cover h-24 md:w-full md:h-full" src={item.image} />
+                <img className="w-24 rounded-full h-24 md:w-full md:h-full" src={item.image} />
               </div>
               <div className="flex flex-col gap-2  justify-center items-end w-2/3 ml-auto">
                 <span className="text-xl text-center font-semibold text-white">

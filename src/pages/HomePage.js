@@ -79,17 +79,17 @@ const HomePage = () => {
                     <img className="w-full h-full" src={item.image} />
                   </div>
                   <div className="flex flex-col ml-2">
-                    <span className="text-xl font-semibold text-purple-800">
+                    <span className="text-sm sm:text-lg lg:text-2xl font-semibold text-purple-800">
                       {item.type === "Income"
                         ? `From ${item.person}`
                         : `To ${item.person}`}
                     </span>
-                    <div className="flex gap-1 text-lg text-gray-600">
+                    <div className="flex gap-1  text-sm sm:text-base lg:text-xl text-gray-600">
                       <span>{item.date},</span>
                       <span>{item.time}</span>
                     </div>
                   </div>
-                  <span className="ml-auto py-1 h-min px-3 bg-purple-400 flex justify-center items-center rounded-full text-purple-800 text-lg font-semibold">
+                  <span className="ml-auto w-16 h-10 py-1 px-3 bg-purple-400 flex justify-center items-center rounded-full text-purple-800 text-xs sm:text-sm sm:w-20 lg:text-lg font-semibold">
                     {item.value} $
                   </span>
                 </div>
